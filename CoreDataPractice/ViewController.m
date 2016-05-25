@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "AppDelegate.h"
 
-@interface ViewController ()<UITableViewDataSource>
+@interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 - (IBAction)addName:(id)sender;
 
@@ -22,6 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+    self.tableView.delegate = self;
     self.people = [NSMutableArray new];
 }
 
@@ -35,7 +36,7 @@
     
     NSFetchRequest * fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Person"];
     
-    NSError * error = [NSError new];
+    NSError * error = [NSError errorWithDomain:@"Could not fetch data" code:1 userInfo:nil];
     NSArray * results = [managedContext executeFetchRequest:fetchRequest error:&error];
     self.people = [results mutableCopy];
 }
@@ -58,12 +59,12 @@
     }];
     
     [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
-        
     }];
     
     [alert addAction:saveAction];
     [alert addAction:cancelAction];
     
+    [alert.view setNeedsLayout];
     [self presentViewController:alert animated:YES completion:nil];
 }
 
@@ -91,7 +92,7 @@
     NSManagedObject * person = [[NSManagedObject alloc] initWithEntity:entity insertIntoManagedObjectContext:managedContext];
     
     [person setValue:name forKey: @"name"];
-    NSError * error = [NSError new];
+    NSError * error = [NSError errorWithDomain:@"Could not save data" code:1 userInfo:nil];
     [managedContext save:&error];
     [self.people addObject: person];
 }

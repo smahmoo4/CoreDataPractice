@@ -8,19 +8,18 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fR4-Eb-hS0">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fR4-Eb-hS0">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="dGX-L7-t4J"/>
                                 </connections>
@@ -28,12 +27,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="fR4-Eb-hS0" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="5Fw-kJ-0HE"/>
-                            <constraint firstAttribute="trailing" secondItem="fR4-Eb-hS0" secondAttribute="trailing" id="XN5-2b-06j"/>
-                            <constraint firstItem="fR4-Eb-hS0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ajZ-cY-ttz"/>
-                            <constraint firstItem="fR4-Eb-hS0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fFN-Zz-qlz"/>
+                            <constraint firstAttribute="trailing" secondItem="fR4-Eb-hS0" secondAttribute="trailing" id="4o6-VQ-e8Y"/>
+                            <constraint firstItem="fR4-Eb-hS0" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="9N5-so-6dj"/>
+                            <constraint firstItem="fR4-Eb-hS0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="AfF-mq-LoQ"/>
+                            <constraint firstItem="fR4-Eb-hS0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="igr-3E-x84"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="L3R-th-O58">
                         <barButtonItem key="rightBarButtonItem" title="Add" id="jRX-Hw-U9v">
                             <connections>
